@@ -31,14 +31,6 @@ namespace Diplom_Start_v_budushee
         {
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.listViewNastavnik = new System.Windows.Forms.ListView();
-            this.columnHeaderFIO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderRegTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderCompetencies = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderAchievement = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderInterests = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderAgeWanted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderTimeNeeded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxFIO = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,12 +52,15 @@ namespace Diplom_Start_v_budushee
             this.наставникTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.НАСТАВНИКTableAdapter();
             this.участникTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.УЧАСТНИКTableAdapter();
             this.button_AddPhoto = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listViewNastavnik = new System.Windows.Forms.ListView();
+            this.columnHeaderFIO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderRegTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderCompetencies = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAchievement = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderInterests = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAgeWanted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderTimeNeeded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitter1
@@ -89,61 +84,6 @@ namespace Diplom_Start_v_budushee
             this.splitter2.Size = new System.Drawing.Size(1233, 92);
             this.splitter2.TabIndex = 1;
             this.splitter2.TabStop = false;
-            // 
-            // listViewNastavnik
-            // 
-            this.listViewNastavnik.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderFIO,
-            this.columnHeaderRegTime,
-            this.columnHeaderCompetencies,
-            this.columnHeaderAchievement,
-            this.columnHeaderInterests,
-            this.columnHeaderAgeWanted,
-            this.columnHeaderTimeNeeded});
-            this.listViewNastavnik.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewNastavnik.GridLines = true;
-            this.listViewNastavnik.HideSelection = false;
-            this.listViewNastavnik.Location = new System.Drawing.Point(3, 3);
-            this.listViewNastavnik.Name = "listViewNastavnik";
-            this.listViewNastavnik.Size = new System.Drawing.Size(1219, 471);
-            this.listViewNastavnik.TabIndex = 2;
-            this.listViewNastavnik.UseCompatibleStateImageBehavior = false;
-            this.listViewNastavnik.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeaderFIO
-            // 
-            this.columnHeaderFIO.Text = "Имя наставника";
-            this.columnHeaderFIO.Width = 162;
-            // 
-            // columnHeaderRegTime
-            // 
-            this.columnHeaderRegTime.Text = "Время регистрации";
-            this.columnHeaderRegTime.Width = 145;
-            // 
-            // columnHeaderCompetencies
-            // 
-            this.columnHeaderCompetencies.Text = "Основные компетенции";
-            this.columnHeaderCompetencies.Width = 239;
-            // 
-            // columnHeaderAchievement
-            // 
-            this.columnHeaderAchievement.Text = "Достижения";
-            this.columnHeaderAchievement.Width = 244;
-            // 
-            // columnHeaderInterests
-            // 
-            this.columnHeaderInterests.Text = "Интересы";
-            this.columnHeaderInterests.Width = 241;
-            // 
-            // columnHeaderAgeWanted
-            // 
-            this.columnHeaderAgeWanted.Text = "Возраст наставляемых";
-            this.columnHeaderAgeWanted.Width = 94;
-            // 
-            // columnHeaderTimeNeeded
-            // 
-            this.columnHeaderTimeNeeded.Text = "Ресурс времени";
-            this.columnHeaderTimeNeeded.Width = 100;
             // 
             // label1
             // 
@@ -342,37 +282,60 @@ namespace Diplom_Start_v_budushee
             this.button_AddPhoto.UseVisualStyleBackColor = false;
             this.button_AddPhoto.Click += new System.EventHandler(this.button_AddPhoto_Click);
             // 
-            // tabControl1
+            // listViewNastavnik
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(343, 92);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1233, 503);
-            this.tabControl1.TabIndex = 21;
+            this.listViewNastavnik.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderFIO,
+            this.columnHeaderRegTime,
+            this.columnHeaderCompetencies,
+            this.columnHeaderAchievement,
+            this.columnHeaderInterests,
+            this.columnHeaderAgeWanted,
+            this.columnHeaderTimeNeeded});
+            this.listViewNastavnik.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewNastavnik.GridLines = true;
+            this.listViewNastavnik.HideSelection = false;
+            this.listViewNastavnik.Location = new System.Drawing.Point(343, 92);
+            this.listViewNastavnik.Name = "listViewNastavnik";
+            this.listViewNastavnik.Size = new System.Drawing.Size(1233, 503);
+            this.listViewNastavnik.TabIndex = 2;
+            this.listViewNastavnik.UseCompatibleStateImageBehavior = false;
+            this.listViewNastavnik.View = System.Windows.Forms.View.Details;
             // 
-            // tabPage1
+            // columnHeaderFIO
             // 
-            this.tabPage1.Controls.Add(this.listViewNastavnik);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1225, 477);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Просмотр всех записей";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.columnHeaderFIO.Text = "Имя наставника";
+            this.columnHeaderFIO.Width = 162;
             // 
-            // tabPage2
+            // columnHeaderRegTime
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1225, 477);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Постраничный просмотр";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.columnHeaderRegTime.Text = "Время регистрации";
+            this.columnHeaderRegTime.Width = 145;
+            // 
+            // columnHeaderCompetencies
+            // 
+            this.columnHeaderCompetencies.Text = "Основные компетенции";
+            this.columnHeaderCompetencies.Width = 239;
+            // 
+            // columnHeaderAchievement
+            // 
+            this.columnHeaderAchievement.Text = "Достижения";
+            this.columnHeaderAchievement.Width = 244;
+            // 
+            // columnHeaderInterests
+            // 
+            this.columnHeaderInterests.Text = "Интересы";
+            this.columnHeaderInterests.Width = 241;
+            // 
+            // columnHeaderAgeWanted
+            // 
+            this.columnHeaderAgeWanted.Text = "Возраст наставляемых";
+            this.columnHeaderAgeWanted.Width = 94;
+            // 
+            // columnHeaderTimeNeeded
+            // 
+            this.columnHeaderTimeNeeded.Text = "Ресурс времени";
+            this.columnHeaderTimeNeeded.Width = 100;
             // 
             // Form_NastavnikList
             // 
@@ -380,7 +343,7 @@ namespace Diplom_Start_v_budushee
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1576, 595);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.listViewNastavnik);
             this.Controls.Add(this.button_AddPhoto);
             this.Controls.Add(this.textBox_FIOfilter);
             this.Controls.Add(this.label9);
@@ -404,8 +367,6 @@ namespace Diplom_Start_v_budushee
             this.Name = "Form_NastavnikList";
             this.Text = "Список наставников";
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,13 +376,6 @@ namespace Diplom_Start_v_budushee
 
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Splitter splitter2;
-        private System.Windows.Forms.ListView listViewNastavnik;
-        private System.Windows.Forms.ColumnHeader columnHeaderFIO;
-        private System.Windows.Forms.ColumnHeader columnHeaderRegTime;
-        private System.Windows.Forms.ColumnHeader columnHeaderCompetencies;
-        private System.Windows.Forms.ColumnHeader columnHeaderAchievement;
-        private System.Windows.Forms.ColumnHeader columnHeaderInterests;
-        private System.Windows.Forms.ColumnHeader columnHeaderAgeWanted;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxFIO;
         private System.Windows.Forms.Label label2;
@@ -436,7 +390,6 @@ namespace Diplom_Start_v_budushee
         private System.Windows.Forms.TextBox textBox_TimeNastavnichestvo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ColumnHeader columnHeaderTimeNeeded;
         private Старт_в_будущее_КПDataSet старт_в_будущее_КПDataSet1;
         private Старт_в_будущее_КПDataSetTableAdapters.НАСТАВНИКTableAdapter наставникTableAdapter1;
         private Старт_в_будущее_КПDataSetTableAdapters.УЧАСТНИКTableAdapter участникTableAdapter1;
@@ -444,8 +397,13 @@ namespace Diplom_Start_v_budushee
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_FIOfilter;
         private System.Windows.Forms.Button button_AddPhoto;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListView listViewNastavnik;
+        private System.Windows.Forms.ColumnHeader columnHeaderFIO;
+        private System.Windows.Forms.ColumnHeader columnHeaderRegTime;
+        private System.Windows.Forms.ColumnHeader columnHeaderCompetencies;
+        private System.Windows.Forms.ColumnHeader columnHeaderAchievement;
+        private System.Windows.Forms.ColumnHeader columnHeaderInterests;
+        private System.Windows.Forms.ColumnHeader columnHeaderAgeWanted;
+        private System.Windows.Forms.ColumnHeader columnHeaderTimeNeeded;
     }
 }
