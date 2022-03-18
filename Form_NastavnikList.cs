@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,13 @@ namespace Diplom_Start_v_budushee
 {
     public partial class Form_NastavnikList : Form
     {
+        //Код под постраничный просмотр
+        int pageSize = 5;
+        int pageNumber = 0; //Текущая страница
+        SqlDataAdapter adapter; //Я не знаю что такое SqlDataAdapter
+        string connectionString = @"Data Source=DESKTOP-6DFE16M\SQLEXPRESS;Initial Catalog=Старт_в_будущее_КП;Integrated Security=True"; //Строка подключения к базе данных
+        DataSet ds; //И как этой дичью пользоваться я тоже не знаю
+        //конец кода под постраничный просмотр
         public void ListViewFill()
         {
             listViewNastavnik.Items.Clear();
@@ -21,7 +29,7 @@ namespace Diplom_Start_v_budushee
             участникTableAdapter1.Fill(старт_в_будущее_КПDataSet1.УЧАСТНИК);
             foreach (DataRow row in this.старт_в_будущее_КПDataSet1.НАСТАВНИК.Rows)
             {
-                ConRow = row.GetParentRow("FK_НАСТАВЛЯЕМЫЙ_УЧАСТНИК1");
+                ConRow = row.GetParentRow("FK_НАСТАВНИК_УЧАСТНИК1");
 
                 items[1] = row["Время регистрации"].ToString();
                 items[2] = row["Основные компетенции"].ToString();
@@ -40,13 +48,32 @@ namespace Diplom_Start_v_budushee
             {
                 FIOitem = FIOrow["ФИО"].ToString();
                 comboBoxFIO.Items.Add(FIOitem);
-            }    
-            
+            }
+
+        }
+        private string GetSql() //Функция для отправления запроса в таблицу НАСТАВНИК. Нужно для реализации постраничного вывода
+        {
+            return "SELECT * FROM НАСТАВНИК ORDER BY [ID участника] OFFSET ((" + pageNumber + ") * " + pageSize + ") " +
+                "ROWS FETCH NEXT " + pageSize + "ROWS ONLY";
         }
         public Form_NastavnikList()
         {
             InitializeComponent();
             ListViewFill();
+
+            //Постраничный просмотр
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                adapter = new SqlDataAdapter(GetSql(), connection);
+
+                ds = new DataSet();
+                adapter.Fill(ds, "НАСТАВНИК"); //Я не понимаю че там заполняется в датасет и как из строки справа это делается
+                dataGridViewNastavnik.DataSource = ds.Tables[0];
+                dataGridViewNastavnik.Columns["ID участника"].ReadOnly = true;
+            }
+
+            labelPageCount.Text = "0 страница";
+
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -112,7 +139,7 @@ namespace Diplom_Start_v_budushee
                         throw new Exception(@"Поля ""Желаемый возраст наставляемых"" и ""Ресурс времени на наставничество"" имеет больше чем 20 символов! Уменьшите количество символов.");
                 }
             }
-            
+
             Guid IDfio = (Guid)MemberDataRow[0]["ID"];
             наставникTableAdapter1.Insert(DateTime.Now, IDfio, richTextBox_Competence.Text,
                 richTextBox_Achievements.Text, richTextBox_Interests.Text, textBox_AgePreferable.Text
@@ -148,13 +175,44 @@ namespace Diplom_Start_v_budushee
             }
             else
                 ListViewFill();
-            
+
         }
         private void button_AddPhoto_Click(object sender, EventArgs e)
         {
             Form_AddPhoto form_AddPhoto = new Form_AddPhoto();
             form_AddPhoto.Show();
             this.Close();
+        }
+
+        private void buttonPageNext_Click(object sender, EventArgs e)
+        {
+            if (ds.Tables["НАСТАВНИК"].Rows.Count < pageSize) return;
+
+            pageNumber++;
+            labelPageCount.Text = pageNumber.ToString() + " страница";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                adapter = new SqlDataAdapter(GetSql(), connection);
+
+                ds.Tables["НАСТАВНИК"].Rows.Clear();
+
+                adapter.Fill(ds, "НАСТАВНИК");
+            }
+        }
+
+        private void buttonPagePrev_Click(object sender, EventArgs e)
+        {
+            if (pageNumber == 0) return;
+            pageNumber--;
+            labelPageCount.Text = pageNumber.ToString() + " страница";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                adapter = new SqlDataAdapter(GetSql(), connection);
+
+                ds.Tables["НАСТАВНИК"].Rows.Clear();
+
+                adapter.Fill(ds, "НАСТАВНИК");
+            }
         }
     }
 }

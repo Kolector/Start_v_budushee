@@ -63,9 +63,15 @@ namespace Diplom_Start_v_budushee
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewNastavnik = new System.Windows.Forms.DataGridView();
+            this.buttonPagePrev = new System.Windows.Forms.Button();
+            this.buttonPageNext = new System.Windows.Forms.Button();
+            this.labelPageCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNastavnik)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -366,6 +372,10 @@ namespace Diplom_Start_v_budushee
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelPageCount);
+            this.tabPage2.Controls.Add(this.buttonPageNext);
+            this.tabPage2.Controls.Add(this.buttonPagePrev);
+            this.tabPage2.Controls.Add(this.dataGridViewNastavnik);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -373,6 +383,52 @@ namespace Diplom_Start_v_budushee
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Постраничный просмотр";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewNastavnik
+            // 
+            this.dataGridViewNastavnik.AllowUserToAddRows = false;
+            this.dataGridViewNastavnik.AllowUserToDeleteRows = false;
+            this.dataGridViewNastavnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNastavnik.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridViewNastavnik.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewNastavnik.Name = "dataGridViewNastavnik";
+            this.dataGridViewNastavnik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewNastavnik.Size = new System.Drawing.Size(1219, 424);
+            this.dataGridViewNastavnik.TabIndex = 0;
+            // 
+            // buttonPagePrev
+            // 
+            this.buttonPagePrev.BackColor = System.Drawing.Color.White;
+            this.buttonPagePrev.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPagePrev.Location = new System.Drawing.Point(3, 430);
+            this.buttonPagePrev.Name = "buttonPagePrev";
+            this.buttonPagePrev.Size = new System.Drawing.Size(295, 41);
+            this.buttonPagePrev.TabIndex = 1;
+            this.buttonPagePrev.Text = "Пред. страница";
+            this.buttonPagePrev.UseVisualStyleBackColor = false;
+            this.buttonPagePrev.Click += new System.EventHandler(this.buttonPagePrev_Click);
+            // 
+            // buttonPageNext
+            // 
+            this.buttonPageNext.BackColor = System.Drawing.Color.White;
+            this.buttonPageNext.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPageNext.Location = new System.Drawing.Point(435, 430);
+            this.buttonPageNext.Name = "buttonPageNext";
+            this.buttonPageNext.Size = new System.Drawing.Size(295, 41);
+            this.buttonPageNext.TabIndex = 2;
+            this.buttonPageNext.Text = "След. страница";
+            this.buttonPageNext.UseVisualStyleBackColor = false;
+            this.buttonPageNext.Click += new System.EventHandler(this.buttonPageNext_Click);
+            // 
+            // labelPageCount
+            // 
+            this.labelPageCount.AutoSize = true;
+            this.labelPageCount.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPageCount.Location = new System.Drawing.Point(320, 441);
+            this.labelPageCount.Name = "labelPageCount";
+            this.labelPageCount.Size = new System.Drawing.Size(92, 19);
+            this.labelPageCount.TabIndex = 3;
+            this.labelPageCount.Text = "X страница";
             // 
             // Form_NastavnikList
             // 
@@ -406,6 +462,9 @@ namespace Diplom_Start_v_budushee
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNastavnik)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,5 +506,9 @@ namespace Diplom_Start_v_budushee
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label labelPageCount;
+        private System.Windows.Forms.Button buttonPageNext;
+        private System.Windows.Forms.Button buttonPagePrev;
+        private System.Windows.Forms.DataGridView dataGridViewNastavnik;
     }
 }

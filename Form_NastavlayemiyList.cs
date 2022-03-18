@@ -27,8 +27,10 @@ namespace Diplom_Start_v_budushee
                 items[2] = row["Время регистрации"].ToString();
                 items[3] = row["Дата вхождения в программу"].ToString();
 
-                ListViewItem ItemRow = new ListViewItem();
-                ItemRow.Text = ConRow["ФИО"].ToString();
+                ListViewItem ItemRow = new ListViewItem
+                {
+                    Text = ConRow["ФИО"].ToString()
+                };
                 ItemRow.SubItems.AddRange(items);
                 listViewNastavlayemiy.Items.Add(ItemRow);
             }
@@ -49,7 +51,7 @@ namespace Diplom_Start_v_budushee
             DataRow[] MemberDataRow = старт_в_будущее_КПDataSet1.УЧАСТНИК.Select("ФИО='" + comboBoxFIO.Text + "'");
 
             Guid IDfio = (Guid)MemberDataRow[0]["ID"];
-            наставляемыйTableAdapter1.Insert(DateTime.Now, IDfio, );
+            наставляемыйTableAdapter1.Insert(DateTime.Now, IDfio, richTextBoxExpectations.Text, DateTime.Now);
             FillNastavlayemiyList();
             MessageBox.Show("Добавление выполнено успешно!");
         }
