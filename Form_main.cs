@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,6 +99,14 @@ namespace Diplom_Start_v_budushee
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void руководствоОператораToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //string PathRukovodstvo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + @"Руководство оператора Старт в будущее.docx");
+            //File.Open(PathRukovodstvo, FileMode.Open);
+            Form_rukovodstvo form = new Form_rukovodstvo();
+            form.Show();
         }
     }
 }

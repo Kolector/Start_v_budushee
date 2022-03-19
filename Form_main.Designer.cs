@@ -87,6 +87,7 @@ namespace Diplom_Start_v_budushee
             this.пРЕДМЕТНАСТАВНИЧЕСТВАBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.пРЕДМЕТ_НАСТАВНИЧЕСТВАTableAdapter = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.ПРЕДМЕТ_НАСТАВНИЧЕСТВАTableAdapter();
             this.модулЬ_НАСТАВНИЧЕСТВАTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.МОДУЛЬ_НАСТАВНИЧЕСТВАTableAdapter();
+            this.руководствоОператораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -519,6 +520,8 @@ namespace Diplom_Start_v_budushee
             // 
             // оПрограммеToolStripMenuItem
             // 
+            this.оПрограммеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.руководствоОператораToolStripMenuItem});
             this.оПрограммеToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
@@ -549,6 +552,13 @@ namespace Diplom_Start_v_budushee
             // модулЬ_НАСТАВНИЧЕСТВАTableAdapter1
             // 
             this.модулЬ_НАСТАВНИЧЕСТВАTableAdapter1.ClearBeforeFill = true;
+            // 
+            // руководствоОператораToolStripMenuItem
+            // 
+            this.руководствоОператораToolStripMenuItem.Name = "руководствоОператораToolStripMenuItem";
+            this.руководствоОператораToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.руководствоОператораToolStripMenuItem.Text = "Руководство оператора";
+            this.руководствоОператораToolStripMenuItem.Click += new System.EventHandler(this.руководствоОператораToolStripMenuItem_Click);
             // 
             // Form_main
             // 
@@ -634,5 +644,6 @@ namespace Diplom_Start_v_budushee
         private System.Windows.Forms.RadioButton radioButtonModule;
         private System.Windows.Forms.RadioButton radioButtonPredmet;
         private Старт_в_будущее_КПDataSetTableAdapters.МОДУЛЬ_НАСТАВНИЧЕСТВАTableAdapter модулЬ_НАСТАВНИЧЕСТВАTableAdapter1;
+        private System.Windows.Forms.ToolStripMenuItem руководствоОператораToolStripMenuItem;
     }
 }

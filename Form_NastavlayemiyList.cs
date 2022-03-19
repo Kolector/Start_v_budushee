@@ -49,7 +49,7 @@ namespace Diplom_Start_v_budushee
             DataRow[] MemberDataRow = старт_в_будущее_КПDataSet1.УЧАСТНИК.Select("ФИО='" + comboBoxFIO.Text + "'");
 
             Guid IDfio = (Guid)MemberDataRow[0]["ID"];
-            наставляемыйTableAdapter1.Insert(DateTime.Now, IDfio, );
+            наставляемыйTableAdapter1.Insert(DateTime.Now, IDfio, richTextBoxExpectations.Text, DateTime.Now);
             FillNastavlayemiyList();
             MessageBox.Show("Добавление выполнено успешно!");
         }
