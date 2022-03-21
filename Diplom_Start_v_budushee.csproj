@@ -248,6 +248,7 @@
     <Resource Include="Руководство оператора Старт в будущее.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <None Include="Руководство оператора открытие списков.rtf" />
     <None Include="Старт_в_будущее_КПDataSet.xsc">
       <DependentUpon>Старт_в_будущее_КПDataSet.xsd</DependentUpon>
     </None>

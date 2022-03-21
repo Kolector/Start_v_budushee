@@ -21,7 +21,7 @@ namespace Diplom_Start_v_budushee
             участникTableAdapter1.Fill(старт_в_будущее_КПDataSet1.УЧАСТНИК);
             foreach (DataRow row in this.старт_в_будущее_КПDataSet1.НАСТАВНИК.Rows)
             {
-                ConRow = row.GetParentRow("FK_НАСТАВЛЯЕМЫЙ_УЧАСТНИК1");
+                ConRow = row.GetParentRow("FK_НАСТАВНИК_УЧАСТНИК1");
 
                 items[1] = row["Время регистрации"].ToString();
                 items[2] = row["Основные компетенции"].ToString();

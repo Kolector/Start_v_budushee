@@ -33,9 +33,6 @@ namespace Diplom_Start_v_budushee
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -58,7 +55,6 @@ namespace Diplom_Start_v_budushee
             this.SerialNumPredmetColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PredmetColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.chartEmployment = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPosts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -92,7 +88,6 @@ namespace Diplom_Start_v_budushee
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartEmployment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPosts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -296,7 +291,6 @@ namespace Diplom_Start_v_budushee
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.chartEmployment);
             this.tabPage3.Controls.Add(this.chartPosts);
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
@@ -306,37 +300,20 @@ namespace Diplom_Start_v_budushee
             this.tabPage3.Text = "Статистика и графики";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // chartEmployment
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartEmployment.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEmployment.Legends.Add(legend1);
-            this.chartEmployment.Location = new System.Drawing.Point(314, 12);
-            this.chartEmployment.Name = "chartEmployment";
-            this.chartEmployment.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series2";
-            this.chartEmployment.Series.Add(series1);
-            this.chartEmployment.Size = new System.Drawing.Size(308, 300);
-            this.chartEmployment.TabIndex = 1;
-            this.chartEmployment.Text = "chart2";
-            // 
             // chartPosts
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartPosts.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartPosts.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartPosts.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPosts.Legends.Add(legend1);
             this.chartPosts.Location = new System.Drawing.Point(8, 9);
             this.chartPosts.Name = "chartPosts";
-            this.chartPosts.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Posts";
-            this.chartPosts.Series.Add(series2);
+            this.chartPosts.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series1.Legend = "Legend1";
+            series1.Name = "Posts";
+            this.chartPosts.Series.Add(series1);
             this.chartPosts.Size = new System.Drawing.Size(300, 300);
             this.chartPosts.TabIndex = 0;
             this.chartPosts.Text = "chartPosts";
@@ -578,7 +555,6 @@ namespace Diplom_Start_v_budushee
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartEmployment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPosts)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -624,7 +600,6 @@ namespace Diplom_Start_v_budushee
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartEmployment;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPosts;
         private Старт_в_будущее_КПDataSetTableAdapters.УЧАСТНИКTableAdapter участникTableAdapter1;
         private Старт_в_будущее_КПDataSetTableAdapters.ОРГАНИЗАЦИЯTableAdapter организацияTableAdapter1;

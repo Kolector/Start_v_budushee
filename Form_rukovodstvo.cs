@@ -23,6 +23,10 @@ namespace Diplom_Start_v_budushee
             {
                 richTextBoxRTF.Rtf = Properties.Resources.Руководство_оператора_Старт_в_будущее;
             }
+            if (listViewOverview.Items[1].Selected == true)
+            {
+                richTextBoxRTF.Rtf = Properties.Resources.Руководство_оператора_открытие_списков;
+            }
 
         }
     }

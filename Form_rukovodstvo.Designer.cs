@@ -29,20 +29,18 @@ namespace Diplom_Start_v_budushee
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Обзор приложения"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "- Открытие списков"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "- Добавление записей"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "- Удаление записей "}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "- Редактирование записей"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "- Просмотр отчётов"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.listViewOverview = new System.Windows.Forms.ListView();
-            this.richTextBoxRTF = new System.Windows.Forms.RichTextBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBoxRTF = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // splitter1
@@ -60,11 +58,10 @@ namespace Diplom_Start_v_budushee
             this.listViewOverview.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listViewOverview.HideSelection = false;
             this.listViewOverview.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
             this.listViewOverview.Location = new System.Drawing.Point(0, 0);
             this.listViewOverview.Name = "listViewOverview";
             this.listViewOverview.Size = new System.Drawing.Size(178, 450);
@@ -72,6 +69,10 @@ namespace Diplom_Start_v_budushee
             this.listViewOverview.UseCompatibleStateImageBehavior = false;
             this.listViewOverview.View = System.Windows.Forms.View.List;
             this.listViewOverview.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewOverview_MouseClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 3000;
             // 
             // richTextBoxRTF
             // 
@@ -81,10 +82,6 @@ namespace Diplom_Start_v_budushee
             this.richTextBoxRTF.Size = new System.Drawing.Size(622, 450);
             this.richTextBoxRTF.TabIndex = 3;
             this.richTextBoxRTF.Text = "";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Width = 3000;
             // 
             // Form_rukovodstvo
             // 
