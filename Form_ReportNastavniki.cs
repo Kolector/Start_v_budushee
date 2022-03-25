@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,15 @@ namespace Diplom_Start_v_budushee
 {
     public partial class Form_ReportNastavniki : Form
     {
-        public Form_ReportNastavniki()
+        string _imageUrl;
+        public Form_ReportNastavniki(string path)
         {
-            InitializeComponent();
+            
+            if (path != "")
+            {
+                InitializeComponent();
+                _imageUrl = path;
+            }
         }
 
         private void Form_ReportNastavniki_Load(object sender, EventArgs e)
@@ -24,13 +31,24 @@ namespace Diplom_Start_v_budushee
             this.ReportNastavnikiTableAdapter.FillReportNastavniki(this.Старт_в_будущее_КПDataSet.ReportNastavniki);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "Старт_в_будущее_КПDataSet.НАСТАВНИК". При необходимости она может быть перемещена или удалена.
             this.НАСТАВНИКTableAdapter.Fill(this.Старт_в_будущее_КПDataSet.НАСТАВНИК);
-            Class_Photo photo = new Class_Photo();
 
-            ReportParameter pImagePath = new ReportParameter("pImagePath", photo.PhotoPath);
-            this.reportViewer1.LocalReport.SetParameters(pImagePath);
+            ReportDataSource source = new ReportDataSource();
+            source.Name = "source";
+            source.Value = ReportNastavnikiBindingSource;
+            reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
-            
-            photo.PhotoPath = "";
+
+            //Class_Photo photo = new Class_Photo();
+
+            //ReportParameter pName = new ReportParameter("pName", );
+
+            FileInfo image = new FileInfo(_imageUrl);
+
+            ReportParameter pImagePath = new ReportParameter("pImagePath", new Uri(_imageUrl).AbsoluteUri);
+            this.reportViewer1.LocalReport.EnableExternalImages = true;
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { pImagePath });
+            this.reportViewer1.RefreshReport();
+            //photo.PhotoPath = "";
         }
     }
 }

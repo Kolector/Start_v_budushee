@@ -1068,13 +1068,13 @@
             </Style>
           </Textbox>
           <Image Name="ImageByUser">
-            <Source>Embedded</Source>
+            <Source>External</Source>
             <Value>=Parameters!pImagePath.Value</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>0.11741cm</Top>
-            <Left>0.29616cm</Left>
-            <Height>2.43169cm</Height>
-            <Width>2.92875cm</Width>
+            <Top>0.33472cm</Top>
+            <Left>0.31039cm</Left>
+            <Height>2.51106cm</Height>
+            <Width>3.20416cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>

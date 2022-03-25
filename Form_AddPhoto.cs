@@ -13,7 +13,7 @@ namespace Diplom_Start_v_budushee
 {
     public partial class Form_AddPhoto : Form
     {
-        string filename;
+        string filepath;
         public Form_AddPhoto()
         {
             InitializeComponent();
@@ -31,14 +31,16 @@ namespace Diplom_Start_v_budushee
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 pictureBox1.ImageLocation = openFileDialog1.FileName;
 
-            filename = openFileDialog1.FileName;
-            filename = Path.GetFileName(filename);
+            filepath = openFileDialog1.FileName;
+            //filename = Path.GetFileName(filename);
 
-            label_FileNameOutput.Text = filename;
+            label_FileNameOutput.Text = Path.GetFileName(openFileDialog1.FileName);
             label_FilePathOutput.Text = openFileDialog1.FileName;
 
             Class_Photo Photo = new Class_Photo();
-            Photo.PhotoPath = filename;
+            Photo.PhotoPath = filepath;
+
+            
         }
         private void button_SavePhoto_Click(object sender, EventArgs e)
         {
@@ -48,9 +50,13 @@ namespace Diplom_Start_v_budushee
         }
         private void button_AddToReport_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form_ReportNastavniki Report = new Form_ReportNastavniki();
-            Report.Show();
+            if (filepath != "")
+            {
+                this.Close();
+                Form_ReportNastavniki Report = new Form_ReportNastavniki(filepath);
+                Report.Show();
+            }
+           
         }
     }
 }
