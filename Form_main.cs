@@ -45,13 +45,23 @@ namespace Diplom_Start_v_budushee
 
         private void Form_main_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "старт_в_будущее_КПDataSet1.НАСТАВНИК". При необходимости она может быть перемещена или удалена.
+            this.нАСТАВНИКTableAdapter.Fill(this.старт_в_будущее_КПDataSet1.НАСТАВНИК);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "старт_в_будущее_КПDataSet1.ПРЕДМЕТ_НАСТАВНИЧЕСТВА". При необходимости она может быть перемещена или удалена.
             this.пРЕДМЕТ_НАСТАВНИЧЕСТВАTableAdapter.Fill(this.старт_в_будущее_КПDataSet1.ПРЕДМЕТ_НАСТАВНИЧЕСТВА);
             using (Старт_в_будущее_КПDataSet db = new Старт_в_будущее_КПDataSet())
             {
-                chartPosts.DataSource = db.УЧАСТНИК.ToList();
-                chartPosts.Series["Posts"].XValueMember = "Должность/специальность";
-                chartPosts.Series["Posts"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+                //chartPosts.DataSource = db.УЧАСТНИК.ToList();
+                //chartPosts.Series["Posts"].XValueMember = "Должность/специальность";
+                //chartPosts.Series["Posts"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+
+                int[] RowAmmount = new int[2];
+
+                //Диаграмма количества записей в таблицах.
+                chartPosts.Series["Наставники"].Points.AddY(старт_в_будущее_КПDataSet1.НАСТАВНИК.Count());
+                chartPosts.Series["Наставляемые"].Points.AddY(старт_в_будущее_КПDataSet1.НАСТАВЛЯЕМЫЙ.Count());
+                chartPosts.Series["Координаторы"].Points.AddY(старт_в_будущее_КПDataSet1.КООРДИНАТОР.Count());
+
             }
         }
 

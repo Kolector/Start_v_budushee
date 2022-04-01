@@ -38,7 +38,7 @@ namespace Diplom_Start_v_budushee
             label_FilePathOutput.Text = openFileDialog1.FileName;
 
             Class_Photo Photo = new Class_Photo();
-            Photo.PhotoPath = filepath;
+           // Photo.PhotoPath = filepath;
 
             
         }

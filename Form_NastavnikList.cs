@@ -16,9 +16,9 @@ namespace Diplom_Start_v_budushee
         //Код под постраничный просмотр
         int pageSize = 5;
         int pageNumber = 0; //Текущая страница
-        SqlDataAdapter adapter; //Я не знаю что такое SqlDataAdapter
+        SqlDataAdapter adapter; 
         string connectionString = @"Data Source=DESKTOP-6DFE16M\SQLEXPRESS;Initial Catalog=Старт_в_будущее_КП;Integrated Security=True"; //Строка подключения к базе данных
-        DataSet ds; //И как этой дичью пользоваться я тоже не знаю
+        DataSet ds; 
         //конец кода под постраничный просмотр
         public void ListViewFill()
         {
@@ -67,7 +67,7 @@ namespace Diplom_Start_v_budushee
                 adapter = new SqlDataAdapter(GetSql(), connection);
 
                 ds = new DataSet();
-                adapter.Fill(ds, "НАСТАВНИК"); //Я не понимаю че там заполняется в датасет и как из строки справа это делается
+                adapter.Fill(ds, "НАСТАВНИК"); 
                 dataGridViewNastavnik.DataSource = ds.Tables[0];
                 dataGridViewNastavnik.Columns["ID участника"].ReadOnly = true;
             }
@@ -82,6 +82,7 @@ namespace Diplom_Start_v_budushee
             {
                 throw new Exception("Строка ФИО: Количество символов больше 150 либо данное ФИО отсутствует в списке участников!");
             }
+
             if (richTextBox_Achievements.Text.Length > 300 || richTextBox_Competence.Text.Length > 300 || richTextBox_Interests.Text.Length > 300)
             {
                 int scenario = 0;

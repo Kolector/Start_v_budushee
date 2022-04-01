@@ -32,12 +32,6 @@ namespace Diplom_Start_v_budushee
             // TODO: данная строка кода позволяет загрузить данные в таблицу "Старт_в_будущее_КПDataSet.НАСТАВНИК". При необходимости она может быть перемещена или удалена.
             this.НАСТАВНИКTableAdapter.Fill(this.Старт_в_будущее_КПDataSet.НАСТАВНИК);
 
-            ReportDataSource source = new ReportDataSource();
-            source.Name = "source";
-            source.Value = ReportNastavnikiBindingSource;
-            reportViewer1.LocalReport.DataSources.Add(source);
-            this.reportViewer1.RefreshReport();
-
             //Class_Photo photo = new Class_Photo();
 
             //ReportParameter pName = new ReportParameter("pName", );

@@ -30,6 +30,7 @@ namespace Diplom_Start_v_budushee
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ReportNastavnikiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Старт_в_будущее_КПDataSet = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -54,6 +55,9 @@ namespace Diplom_Start_v_budushee
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet_nastavniki";
+            reportDataSource1.Value = this.ReportNastavnikiBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.EnableExternalImages = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Diplom_Start_v_budushee.Report_Nastavniki.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
