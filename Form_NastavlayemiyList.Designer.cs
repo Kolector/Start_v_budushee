@@ -32,19 +32,19 @@ namespace Diplom_Start_v_budushee
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.listViewNastavlayemiy = new System.Windows.Forms.ListView();
+            this.FIOColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExpectationsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateOfRegistration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateOfEntrProgram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxFIO = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBoxExpectations = new System.Windows.Forms.RichTextBox();
             this.buttonSaveNastavlayemiy = new System.Windows.Forms.Button();
-            this.FIOColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ExpectationsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.DateOfRegistration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DateOfEntrProgram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.участникTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.УЧАСТНИКTableAdapter();
             this.наставляемыйTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.НАСТАВЛЯЕМЫЙTableAdapter();
             this.старт_в_будущее_КПDataSet1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSet();
@@ -88,6 +88,26 @@ namespace Diplom_Start_v_budushee
             this.listViewNastavlayemiy.UseCompatibleStateImageBehavior = false;
             this.listViewNastavlayemiy.View = System.Windows.Forms.View.Details;
             // 
+            // FIOColumn
+            // 
+            this.FIOColumn.Text = "ФИО участника";
+            this.FIOColumn.Width = 171;
+            // 
+            // ExpectationsColumn
+            // 
+            this.ExpectationsColumn.Text = "Ожидания наставляемого";
+            this.ExpectationsColumn.Width = 302;
+            // 
+            // DateOfRegistration
+            // 
+            this.DateOfRegistration.Text = "Дата регистрации";
+            this.DateOfRegistration.Width = 111;
+            // 
+            // DateOfEntrProgram
+            // 
+            this.DateOfEntrProgram.Text = "Дата вхождения в программу";
+            this.DateOfEntrProgram.Width = 165;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -113,11 +133,11 @@ namespace Diplom_Start_v_budushee
             // 
             // comboBoxFIO
             // 
-            this.comboBoxFIO.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxFIO.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFIO.FormattingEnabled = true;
             this.comboBoxFIO.Location = new System.Drawing.Point(97, 87);
             this.comboBoxFIO.Name = "comboBoxFIO";
-            this.comboBoxFIO.Size = new System.Drawing.Size(214, 27);
+            this.comboBoxFIO.Size = new System.Drawing.Size(214, 24);
             this.comboBoxFIO.TabIndex = 5;
             // 
             // label3
@@ -133,7 +153,7 @@ namespace Diplom_Start_v_budushee
             // 
             // richTextBoxExpectations
             // 
-            this.richTextBoxExpectations.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBoxExpectations.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBoxExpectations.Location = new System.Drawing.Point(10, 170);
             this.richTextBoxExpectations.Name = "richTextBoxExpectations";
             this.richTextBoxExpectations.Size = new System.Drawing.Size(301, 169);
@@ -152,16 +172,6 @@ namespace Diplom_Start_v_budushee
             this.buttonSaveNastavlayemiy.Text = "Сохранить";
             this.buttonSaveNastavlayemiy.UseVisualStyleBackColor = false;
             this.buttonSaveNastavlayemiy.Click += new System.EventHandler(this.buttonSaveNastavlayemiy_Click);
-            // 
-            // FIOColumn
-            // 
-            this.FIOColumn.Text = "ФИО участника";
-            this.FIOColumn.Width = 171;
-            // 
-            // ExpectationsColumn
-            // 
-            this.ExpectationsColumn.Text = "Ожидания наставляемого";
-            this.ExpectationsColumn.Width = 302;
             // 
             // label4
             // 
@@ -190,16 +200,6 @@ namespace Diplom_Start_v_budushee
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(262, 26);
             this.textBox1.TabIndex = 11;
-            // 
-            // DateOfRegistration
-            // 
-            this.DateOfRegistration.Text = "Дата регистрации";
-            this.DateOfRegistration.Width = 111;
-            // 
-            // DateOfEntrProgram
-            // 
-            this.DateOfEntrProgram.Text = "Дата вхождения в программу";
-            this.DateOfEntrProgram.Width = 165;
             // 
             // участникTableAdapter1
             // 
@@ -234,6 +234,7 @@ namespace Diplom_Start_v_budushee
             this.Controls.Add(this.splitter1);
             this.Name = "Form_NastavlayemiyList";
             this.Text = "Просмотр наставляемых";
+            this.Load += new System.EventHandler(this.Form_NastavlayemiyList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

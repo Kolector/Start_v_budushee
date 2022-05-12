@@ -92,10 +92,14 @@ namespace Diplom_Start_v_budushee
             if(radioButtonModule.Checked == true)
             {
                 модулЬ_НАСТАВНИЧЕСТВАTableAdapter1.Insert(textBoxName.Text);
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "старт_в_будущее_КПDataSet1.ПРЕДМЕТ_НАСТАВНИЧЕСТВА". При необходимости она может быть перемещена или удалена.
+                this.пРЕДМЕТ_НАСТАВНИЧЕСТВАTableAdapter.Fill(this.старт_в_будущее_КПDataSet1.ПРЕДМЕТ_НАСТАВНИЧЕСТВА);
             }
             else if (radioButtonPredmet.Checked == true)
             {
                 пРЕДМЕТ_НАСТАВНИЧЕСТВАTableAdapter.Insert(textBoxName.Text);
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "старт_в_будущее_КПDataSet1.ПРЕДМЕТ_НАСТАВНИЧЕСТВА". При необходимости она может быть перемещена или удалена.
+                this.модулЬ_НАСТАВНИЧЕСТВАTableAdapter1.Fill(this.старт_в_будущее_КПDataSet1.МОДУЛЬ_НАСТАВНИЧЕСТВА);
             }
         }
 
@@ -106,6 +110,11 @@ namespace Diplom_Start_v_budushee
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -492,21 +492,21 @@ namespace Diplom_Start_v_budushee
             // наставникиToolStripMenuItem
             // 
             this.наставникиToolStripMenuItem.Name = "наставникиToolStripMenuItem";
-            this.наставникиToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.наставникиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.наставникиToolStripMenuItem.Text = "Наставники";
             this.наставникиToolStripMenuItem.Click += new System.EventHandler(this.наставникиToolStripMenuItem_Click);
             // 
             // наставляемыеToolStripMenuItem
             // 
             this.наставляемыеToolStripMenuItem.Name = "наставляемыеToolStripMenuItem";
-            this.наставляемыеToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.наставляемыеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.наставляемыеToolStripMenuItem.Text = "Наставляемые";
             this.наставляемыеToolStripMenuItem.Click += new System.EventHandler(this.наставляемыеToolStripMenuItem_Click);
             // 
             // координаторыToolStripMenuItem
             // 
             this.координаторыToolStripMenuItem.Name = "координаторыToolStripMenuItem";
-            this.координаторыToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.координаторыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.координаторыToolStripMenuItem.Text = "Координаторы";
             // 
             // оПрограммеToolStripMenuItem
@@ -515,6 +515,7 @@ namespace Diplom_Start_v_budushee
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // участникTableAdapter1
             // 

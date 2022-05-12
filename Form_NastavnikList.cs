@@ -150,7 +150,7 @@ namespace Diplom_Start_v_budushee
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox_FIOfilter.Text != "")
+                if (textBox_FIOfilter.Text != "")
             {
                 DataRow ConRow;
                 string[] items = new string[7];
