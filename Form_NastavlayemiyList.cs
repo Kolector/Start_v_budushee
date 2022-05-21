@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Diplom_Start_v_budushee
 {
-    public partial class Form_NastavlayemiyList : Form //TODO: Удалять уже добавленыне имена из комбобокса посредством IDшников в Наставнике, Наставляемых и Координаторах
+    public partial class Form_NastavlayemiyList : Form 
     {
         public void FillNastavlayemiyList()
         {
@@ -20,6 +20,7 @@ namespace Diplom_Start_v_budushee
             
             наставляемыйTableAdapter1.Fill(старт_в_будущее_КПDataSet1.НАСТАВЛЯЕМЫЙ);
             участникTableAdapter1.Fill(старт_в_будущее_КПDataSet1.УЧАСТНИК);
+
             foreach (DataRow row in this.старт_в_будущее_КПDataSet1.НАСТАВЛЯЕМЫЙ.Rows)
             {
                 ConRow = row.GetParentRow("FK_НАСТАВЛЯЕМЫЙ_УЧАСТНИК1");
@@ -35,34 +36,51 @@ namespace Diplom_Start_v_budushee
                 ItemRow.SubItems.AddRange(items);
                 listViewNastavlayemiy.Items.Add(ItemRow);
             }
-            string FIOitem;
-            foreach (DataRow FIOrow in this.старт_в_будущее_КПDataSet1.УЧАСТНИК)
-            {
-                FIOitem = FIOrow["ФИО"].ToString();
-                comboBoxFIO.Items.Add(FIOitem);
-            }
+
+            UpdateComboboxFIOItem();
         }
         public Form_NastavlayemiyList()
         {
             InitializeComponent();
         }
 
-        private void NamesByAlphabeticalOrder()
+        public void UpdateComboboxFIOItem()
         {
-            участникTableAdapter1.FillByFioAsc(старт_в_будущее_КПDataSet1.УЧАСТНИК);
-            string idUchastnik;
-            foreach (DataRow row in this.старт_в_будущее_КПDataSet1.УЧАСТНИК.Rows)
+            //Очистка элемента от записей
+            comboBoxFIO.Items.Clear();
+            comboBoxFIO.Text = "";
+
+            //Запрос на заполнение таблицы записями, отсутствующими в таблицах НАСТАВНИК, НАСТАВЛЯЕМЫЙ, КООРДИНАТОР
+            сВОБОДНЫЙ_УЧАСТНИКTableAdapter.Fill(this.старт_в_будущее_КПDataSet1.СВОБОДНЫЙ_УЧАСТНИК);
+
+            //Заполнение элемента
+
+            ComboboxFIOByAlphabeticalOrder(true);
+
+            //string FIOitem;
+            //foreach (DataRow FIOrow in this.старт_в_будущее_КПDataSet1.СВОБОДНЫЙ_УЧАСТНИК)
+            //{
+            //    FIOitem = FIOrow["ФИО"].ToString();
+            //    comboBoxFIO.Items.Add(FIOitem);
+            //}
+
+
+        }
+
+        private void ComboboxFIOByAlphabeticalOrder(bool DirectionAsc) //true - ByAsc, false - ByDesc
+        {
+            if (DirectionAsc)
             {
-
-
-                idUchastnik = row["ID"].ToString();
-
-                DataRow rowNastavlayemiy = this.старт_в_будущее_КПDataSet1.НАСТАВЛЯЕМЫЙ.Rows;
-
-                if (idUchastnik == )
-                { }
-
-                comboBoxFIO.Items.Add(row["ФИО"]);
+                сВОБОДНЫЙ_УЧАСТНИКTableAdapter.FillByAsc(this.старт_в_будущее_КПDataSet1.СВОБОДНЫЙ_УЧАСТНИК);
+            }
+            else
+            {
+                сВОБОДНЫЙ_УЧАСТНИКTableAdapter.FillByDesc(this.старт_в_будущее_КПDataSet1.СВОБОДНЫЙ_УЧАСТНИК);
+            }
+            
+            foreach (DataRow row in this.старт_в_будущее_КПDataSet1.СВОБОДНЫЙ_УЧАСТНИК.Rows)
+            {
+                comboBoxFIO.Items.Add(row["ФИО"].ToString());
             }
         }
 
@@ -70,15 +88,20 @@ namespace Diplom_Start_v_budushee
         {
             DataRow[] MemberDataRow = старт_в_будущее_КПDataSet1.УЧАСТНИК.Select("ФИО='" + comboBoxFIO.Text + "'");
 
+            //Получение ID УЧАСТНИКа для его добавления в таблицу НАСТАВЛЯЕМЫЙ
             Guid IDfio = (Guid)MemberDataRow[0]["ID"];
             наставляемыйTableAdapter1.Insert(DateTime.Now, IDfio, richTextBoxExpectations.Text, DateTime.Now);
+
+            //заполнение таблицы на форме
             FillNastavlayemiyList();
+
+            //Обратная связь с пользователем
             MessageBox.Show("Добавление выполнено успешно!");
         }
 
         private void Form_NastavlayemiyList_Load(object sender, EventArgs e)
         {
-            NamesByAlphabeticalOrder();
+            //NamesByAlphabeticalOrder();
             FillNastavlayemiyList();
         }
     }

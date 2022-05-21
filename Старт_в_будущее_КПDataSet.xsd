@@ -969,6 +969,60 @@ FROM            УЧАСТНИК INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="СВОБОДНЫЙ_УЧАСТНИКTableAdapter" GeneratorDataComponentClassName="СВОБОДНЫЙ_УЧАСТНИКTableAdapter" Name="СВОБОДНЫЙ_УЧАСТНИК" UserDataComponentName="СВОБОДНЫЙ_УЧАСТНИКTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBdiplom_ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        УЧАСТНИК.ID, УЧАСТНИК.ФИО, КООРДИНАТОР.[ID участника] AS ID_координатора, НАСТАВЛЯЕМЫЙ.[ID участника] AS ID_наставляемого, НАСТАВНИК.[ID участника] AS ID_наставника
+FROM            УЧАСТНИК LEFT OUTER JOIN
+                         КООРДИНАТОР ON УЧАСТНИК.ID = КООРДИНАТОР.[ID участника] LEFT OUTER JOIN
+                         НАСТАВЛЯЕМЫЙ ON УЧАСТНИК.ID = НАСТАВЛЯЕМЫЙ.[ID участника] LEFT OUTER JOIN
+                         НАСТАВНИК ON УЧАСТНИК.ID = НАСТАВНИК.[ID участника]
+WHERE        (КООРДИНАТОР.[ID участника] IS NULL) AND (НАСТАВЛЯЕМЫЙ.[ID участника] IS NULL) AND (НАСТАВНИК.[ID участника] IS NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="ID_координатора" DataSetColumn="ID_координатора" />
+              <Mapping SourceColumn="ID_наставляемого" DataSetColumn="ID_наставляемого" />
+              <Mapping SourceColumn="ID_наставника" DataSetColumn="ID_наставника" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DBdiplom_ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAsc" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAsc" GeneratorSourceName="FillByAsc" GetMethodModifier="Public" GetMethodName="GetDataByAsc" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAsc" UserSourceName="FillByAsc">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        УЧАСТНИК.ID, УЧАСТНИК.ФИО, КООРДИНАТОР.[ID участника] AS ID_координатора, НАСТАВЛЯЕМЫЙ.[ID участника] AS ID_наставляемого, НАСТАВНИК.[ID участника] AS ID_наставника
+FROM            УЧАСТНИК LEFT OUTER JOIN
+                         КООРДИНАТОР ON УЧАСТНИК.ID = КООРДИНАТОР.[ID участника] LEFT OUTER JOIN
+                         НАСТАВЛЯЕМЫЙ ON УЧАСТНИК.ID = НАСТАВЛЯЕМЫЙ.[ID участника] LEFT OUTER JOIN
+                         НАСТАВНИК ON УЧАСТНИК.ID = НАСТАВНИК.[ID участника]
+WHERE        (КООРДИНАТОР.[ID участника] IS NULL) AND (НАСТАВЛЯЕМЫЙ.[ID участника] IS NULL) AND (НАСТАВНИК.[ID участника] IS NULL)
+ORDER BY УЧАСТНИК.ФИО</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBdiplom_ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDesc" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDesc" GeneratorSourceName="FillByDesc" GetMethodModifier="Public" GetMethodName="GetDataByDesc" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDesc" UserSourceName="FillByDesc">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        УЧАСТНИК.ID, УЧАСТНИК.ФИО, КООРДИНАТОР.[ID участника] AS ID_координатора, НАСТАВЛЯЕМЫЙ.[ID участника] AS ID_наставляемого, НАСТАВНИК.[ID участника] AS ID_наставника
+FROM            УЧАСТНИК LEFT OUTER JOIN
+                         КООРДИНАТОР ON УЧАСТНИК.ID = КООРДИНАТОР.[ID участника] LEFT OUTER JOIN
+                         НАСТАВЛЯЕМЫЙ ON УЧАСТНИК.ID = НАСТАВЛЯЕМЫЙ.[ID участника] LEFT OUTER JOIN
+                         НАСТАВНИК ON УЧАСТНИК.ID = НАСТАВНИК.[ID участника]
+WHERE        (КООРДИНАТОР.[ID участника] IS NULL) AND (НАСТАВЛЯЕМЫЙ.[ID участника] IS NULL) AND (НАСТАВНИК.[ID участника] IS NULL)
+ORDER BY УЧАСТНИК.ФИО DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1667,6 +1721,23 @@ FROM            УЧАСТНИК INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="СВОБОДНЫЙ_УЧАСТНИК" msprop:Generator_TableClassName="СВОБОДНЫЙ_УЧАСТНИКDataTable" msprop:Generator_TableVarName="tableСВОБОДНЫЙ_УЧАСТНИК" msprop:Generator_RowChangedName="СВОБОДНЫЙ_УЧАСТНИКRowChanged" msprop:Generator_TablePropName="СВОБОДНЫЙ_УЧАСТНИК" msprop:Generator_RowDeletingName="СВОБОДНЫЙ_УЧАСТНИКRowDeleting" msprop:Generator_RowChangingName="СВОБОДНЫЙ_УЧАСТНИКRowChanging" msprop:Generator_RowEvHandlerName="СВОБОДНЫЙ_УЧАСТНИКRowChangeEventHandler" msprop:Generator_RowDeletedName="СВОБОДНЫЙ_УЧАСТНИКRowDeleted" msprop:Generator_RowClassName="СВОБОДНЫЙ_УЧАСТНИКRow" msprop:Generator_UserTableName="СВОБОДНЫЙ_УЧАСТНИК" msprop:Generator_RowEvArgName="СВОБОДНЫЙ_УЧАСТНИКRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
+              <xs:element name="ФИО" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_UserColumnName="ФИО">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_координатора" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID_координатора" msprop:Generator_ColumnPropNameInRow="ID_координатора" msprop:Generator_ColumnPropNameInTable="ID_координатораColumn" msprop:Generator_UserColumnName="ID_координатора" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_наставляемого" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID_наставляемого" msprop:Generator_ColumnPropNameInRow="ID_наставляемого" msprop:Generator_ColumnPropNameInTable="ID_наставляемогоColumn" msprop:Generator_UserColumnName="ID_наставляемого" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_наставника" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID_наставника" msprop:Generator_ColumnPropNameInRow="ID_наставника" msprop:Generator_ColumnPropNameInTable="ID_наставникаColumn" msprop:Generator_UserColumnName="ID_наставника" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

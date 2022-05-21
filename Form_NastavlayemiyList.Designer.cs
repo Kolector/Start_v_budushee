@@ -29,6 +29,7 @@ namespace Diplom_Start_v_budushee
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.listViewNastavlayemiy = new System.Windows.Forms.ListView();
@@ -48,7 +49,11 @@ namespace Diplom_Start_v_budushee
             this.участникTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.УЧАСТНИКTableAdapter();
             this.наставляемыйTableAdapter1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.НАСТАВЛЯЕМЫЙTableAdapter();
             this.старт_в_будущее_КПDataSet1 = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSet();
+            this.сВОБОДНЫЙ_УЧАСТНИКBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сВОБОДНЫЙ_УЧАСТНИКTableAdapter = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.СВОБОДНЫЙ_УЧАСТНИКTableAdapter();
+            this.tableAdapterManager = new Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сВОБОДНЫЙ_УЧАСТНИКBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -57,7 +62,7 @@ namespace Diplom_Start_v_budushee
             this.splitter1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(322, 423);
+            this.splitter1.Size = new System.Drawing.Size(322, 426);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -67,7 +72,7 @@ namespace Diplom_Start_v_budushee
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(322, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(753, 96);
+            this.splitter2.Size = new System.Drawing.Size(773, 96);
             this.splitter2.TabIndex = 1;
             this.splitter2.TabStop = false;
             // 
@@ -83,7 +88,7 @@ namespace Diplom_Start_v_budushee
             this.listViewNastavlayemiy.HideSelection = false;
             this.listViewNastavlayemiy.Location = new System.Drawing.Point(322, 96);
             this.listViewNastavlayemiy.Name = "listViewNastavlayemiy";
-            this.listViewNastavlayemiy.Size = new System.Drawing.Size(753, 327);
+            this.listViewNastavlayemiy.Size = new System.Drawing.Size(773, 330);
             this.listViewNastavlayemiy.TabIndex = 2;
             this.listViewNastavlayemiy.UseCompatibleStateImageBehavior = false;
             this.listViewNastavlayemiy.View = System.Windows.Forms.View.Details;
@@ -165,7 +170,7 @@ namespace Diplom_Start_v_budushee
             this.buttonSaveNastavlayemiy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonSaveNastavlayemiy.BackColor = System.Drawing.Color.LightGreen;
             this.buttonSaveNastavlayemiy.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveNastavlayemiy.Location = new System.Drawing.Point(10, 367);
+            this.buttonSaveNastavlayemiy.Location = new System.Drawing.Point(10, 370);
             this.buttonSaveNastavlayemiy.Name = "buttonSaveNastavlayemiy";
             this.buttonSaveNastavlayemiy.Size = new System.Drawing.Size(301, 46);
             this.buttonSaveNastavlayemiy.TabIndex = 8;
@@ -214,12 +219,39 @@ namespace Diplom_Start_v_budushee
             this.старт_в_будущее_КПDataSet1.DataSetName = "Старт_в_будущее_КПDataSet";
             this.старт_в_будущее_КПDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // сВОБОДНЫЙ_УЧАСТНИКBindingSource
+            // 
+            this.сВОБОДНЫЙ_УЧАСТНИКBindingSource.DataMember = "СВОБОДНЫЙ_УЧАСТНИК";
+            this.сВОБОДНЫЙ_УЧАСТНИКBindingSource.DataSource = this.старт_в_будущее_КПDataSet1;
+            // 
+            // сВОБОДНЫЙ_УЧАСТНИКTableAdapter
+            // 
+            this.сВОБОДНЫЙ_УЧАСТНИКTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Diplom_Start_v_budushee.Старт_в_будущее_КПDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.АККАУНТTableAdapter = null;
+            this.tableAdapterManager.ДОСТУПTableAdapter = null;
+            this.tableAdapterManager.Координатор_легасиTableAdapter = null;
+            this.tableAdapterManager.КООРДИНАТОРTableAdapter = null;
+            this.tableAdapterManager.МОДУЛЬ_НАСТАВНИЧЕСТВАTableAdapter = null;
+            this.tableAdapterManager.Наставляемый_легасиTableAdapter = null;
+            this.tableAdapterManager.НАСТАВЛЯЕМЫЙTableAdapter = this.наставляемыйTableAdapter1;
+            this.tableAdapterManager.Наставник_легасиTableAdapter = null;
+            this.tableAdapterManager.НАСТАВНИКTableAdapter = null;
+            this.tableAdapterManager.НАСТАВНИЧЕСТВОTableAdapter = null;
+            this.tableAdapterManager.ОРГАНИЗАЦИЯTableAdapter = null;
+            this.tableAdapterManager.ПРЕДМЕТ_НАСТАВНИЧЕСТВАTableAdapter = null;
+            this.tableAdapterManager.УЧАСТНИКTableAdapter = this.участникTableAdapter1;
+            // 
             // Form_NastavlayemiyList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1075, 423);
+            this.ClientSize = new System.Drawing.Size(1095, 426);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -236,6 +268,7 @@ namespace Diplom_Start_v_budushee
             this.Text = "Просмотр наставляемых";
             this.Load += new System.EventHandler(this.Form_NastavlayemiyList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.старт_в_будущее_КПDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сВОБОДНЫЙ_УЧАСТНИКBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +295,8 @@ namespace Diplom_Start_v_budushee
         private Старт_в_будущее_КПDataSetTableAdapters.УЧАСТНИКTableAdapter участникTableAdapter1;
         private Старт_в_будущее_КПDataSetTableAdapters.НАСТАВЛЯЕМЫЙTableAdapter наставляемыйTableAdapter1;
         private Старт_в_будущее_КПDataSet старт_в_будущее_КПDataSet1;
+        private System.Windows.Forms.BindingSource сВОБОДНЫЙ_УЧАСТНИКBindingSource;
+        private Старт_в_будущее_КПDataSetTableAdapters.СВОБОДНЫЙ_УЧАСТНИКTableAdapter сВОБОДНЫЙ_УЧАСТНИКTableAdapter;
+        private Старт_в_будущее_КПDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
